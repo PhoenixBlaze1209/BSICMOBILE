@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function member(orgId) { return signedIn() && exists(/databases/$(database)/documents/orgs/$(orgId)/members/$(request.auth.uid)); }
+    function membership(orgId) { return get(/databases/$(database)/documents/orgs/$(orgId)/members/$(request.auth.uid)).data; }
+    function active(orgId) { return member(orgId) && membership(orgId).status == 'active'; }
+    function elevated(orgId) { return active(orgId) && membership(orgId).role in ['owner', 'admin']; }
+    function manager(orgId) { return active(orgId) && membership(orgId).role in ['owner', 'admin', 'manager']; }
+    function bumpsVersion() { return request.resource.data.version == resource.data.version + 1; }
+    function unchanged(fields) { return request.resource.data.diff(resource.data).affectedKeys().hasOnly(fields); }
+
+    match /users/{userId} {
+      allow read, update, delete: if signedIn() && request.auth.uid == userId;
+      allow create: if signedIn() && request.auth.uid == userId;
+      match /fcmTokens/{tokenId} { allow read, write: if signedIn() && request.auth.uid == userId; }
+    }
+
+    match /orgs/{orgId} {
+      allow read: if member(orgId);
+      allow create: if signedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow update: if elevated(orgId);
+      allow delete: if active(orgId) && membership(orgId).role == 'owner';
+
+      match /members/{userId} {
+        allow read: if member(orgId);
+        allow write: if elevated(orgId);
+      }
+      match /teams/{teamId} {
+        allow read: if member(orgId);
+        allow write: if manager(orgId);
+      }
+      match /policies/{policyId} {
+        allow read: if member(orgId);
+        allow write: if elevated(orgId);
+      }
+      match /tasks/{taskId} {
+        allow read: if member(orgId);
+        allow create: if active(orgId) && request.resource.data.orgId == orgId && request.resource.data.version == 1;
+        allow update: if active(orgId) && bumpsVersion()
+          && (manager(orgId) || unchanged(['title','description','status','priority','dueAt','startAt','estimatedMinutes','tags','watcherIds','blockedByTaskIds','subtaskIds','attachments','snoozedUntil','updatedAt','version']));
+        allow delete: if false;
+        match /activities/{activityId} { allow read: if member(orgId); allow create: if active(orgId); allow update, delete: if false; }
+        match /escalations/{eventId} { allow read: if member(orgId); allow write: if false; }
+        match /comments/{commentId} { allow read: if member(orgId); allow create: if active(orgId) && request.resource.data.actorId == request.auth.uid; allow update, delete: if false; }
+      }
+      match /notifications/{notificationId} {
+        allow read: if member(orgId) && resource.data.userId == request.auth.uid;
+        allow update: if member(orgId) && resource.data.userId == request.auth.uid && unchanged(['readAt']);
+        allow create, delete: if false;
+      }
+      match /escalationKeys/{key} { allow read, write: if false; }
+    }
+  }
+}
+

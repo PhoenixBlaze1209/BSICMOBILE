@@ -1,0 +1,10 @@
+[
+  {
+    "name": "high priority unacknowledged",
+    "now": "2026-10-22T01:31:00.000Z",
+    "task": {"id":"task-1","orgId":"org-1","priority":"high","status":"assigned","escalationLevel":0,"version":1,"assignedAt":"2026-10-22T00:00:00.000Z"},
+    "steps": [{"level":1,"triggerCondition":"unacknowledged","afterMinutes":30,"maxRepeats":0,"action":"notify"}],
+    "expected": {"kind":"escalate","idempotencyKey":"task-1:1:unacknowledged"}
+  }
+]
+
