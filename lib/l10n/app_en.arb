@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "appName": "Relay",
+  "home": "Home",
+  "tasks": "Tasks",
+  "inbox": "Inbox",
+  "settings": "Settings",
+  "nextAction": "Next action",
+  "atRisk": "At risk",
+  "onTrack": "On track",
+  "accept": "Accept",
+  "decline": "Decline"
+}
