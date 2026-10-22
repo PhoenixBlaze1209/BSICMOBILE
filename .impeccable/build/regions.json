@@ -1,0 +1,17 @@
+{
+  "regions": [
+    {"id":"top-chrome","kind":"chrome","grid":"A0:J0","note":"white safe-area app bar with Relay and inbox"},
+    {"id":"brand-title","kind":"text","grid":"A0:C0","note":"large Relay title, heavy system sans"},
+    {"id":"next-action-surface","kind":"chrome","grid":"A1:J1","note":"solid cobalt urgent action band"},
+    {"id":"next-action-copy","kind":"text","grid":"A1:G1","note":"white action label, task title, metadata"},
+    {"id":"accept-countdown","kind":"text","grid":"H1:J1","note":"white acceptance deadline with tabular countdown"},
+    {"id":"response-controls","kind":"control","grid":"A2:J2","note":"paired accept and decline Material controls"},
+    {"id":"risk-heading","kind":"text","grid":"A2:J2","note":"At risk section heading and see all action"},
+    {"id":"risk-row","kind":"control","grid":"A3:J3","note":"expanded urgent task row with semantic severity, deadline and owner"},
+    {"id":"escalation-ladder","kind":"control","grid":"A4:J5","note":"three step numbered escalation ladder with labels and times"},
+    {"id":"risk-rows","kind":"control","grid":"A5:J6","note":"compact at-risk task rows"},
+    {"id":"track-heading","kind":"text","grid":"A7:J7","note":"On track section heading and see all action"},
+    {"id":"track-rows","kind":"control","grid":"A7:J9","note":"compact on-track task rows"},
+    {"id":"bottom-navigation","kind":"chrome","grid":"A9:J9","note":"Material navigation bar with create FAB"}
+  ]
+}

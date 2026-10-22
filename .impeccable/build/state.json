@@ -1,0 +1,216 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-10-22T14:11:36.928Z",
+  "comp": ".impeccable\\mocks\\relay-dashboard-c.png",
+  "direction": "5924cfc2",
+  "breakpoint": "853x1844",
+  "artifact": null,
+  "phase": "hero",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-10-22T14:11:36.927Z",
+      "closedAt": "2026-10-22T14:17:06.595Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable\\mocks\\relay-dashboard-c.png",
+        "at": "2026-10-22T14:17:06.594Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-10-22T14:17:06.687Z",
+      "closedAt": "2026-10-22T14:17:54.390Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "13 regions, 0 plates, 5 text regions measured",
+        "at": "2026-10-22T14:17:54.385Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-10-22T14:17:54.390Z",
+      "closedAt": "2026-10-22T14:18:00.055Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no plates owed",
+        "at": "2026-10-22T14:18:00.054Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "open",
+      "openedAt": "2026-10-22T14:18:00.055Z",
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "hero overall 59.9% < 72% (structure 46%, color 76%, detail 47%)",
+          "region top-chrome is missing (detail 3%, structure 84%): the comp shows material the build does not",
+          "region brand-title is missing (detail 0%, structure 47%): the comp shows material the build does not",
+          "region next-action-surface is missing (detail 0%, structure 37%): the comp shows material the build does not",
+          "region next-action-copy is missing (detail 0%, structure 34%): the comp shows material the build does not",
+          "region accept-countdown is missing (detail 0%, structure 51%): the comp shows material the build does not",
+          "region risk-row is missing (detail 0%, structure 34%): the comp shows material the build does not",
+          "region escalation-ladder is missing (detail 1%, structure 51%): the comp shows material the build does not",
+          "region risk-rows is missing (detail 7%, structure 54%): the comp shows material the build does not",
+          "region response-controls (control) is contradicted (structure 47%, detail added 18%): this control does not read as the comp's: rebuild its chrome from the crop (border, fill, radius, chevron or arrow, label size) rather than from a component default",
+          "region risk-heading (text) is contradicted (structure 47%, detail added 18%): the composition of this text region differs from the comp; re-derive it from the spec box",
+          "region track-heading (text) is contradicted (structure 39%, detail added 26%): the composition of this text region differs from the comp; re-derive it from the spec box",
+          "READINGS, each one CSS edit (5):",
+          "text track-heading: the face renders 31% lighter than the comp's (ink density 0.40 vs 0.59); raise a weight step or use the ranked face",
+          "text next-action-copy: ink is #485898 in the build, #f4f6f8 in the comp; use the comp's colour",
+          "text accept-countdown: ink is #485898 in the build, #f4f7f8 in the comp; use the comp's colour",
+          "chrome next-action-surface: its rule sits 9px into the box in the comp and 164px in the build (+155px), so the strip is taller than the comp's; match the height, not only the position",
+          "control risk-row: its rule sits 15px into the box in the comp and 53px in the build (+38px), so the strip is taller than the comp's; match the height, not only the position",
+          "the build carries ink in 6 grid cells where the comp is calm (G3, A4, E5, G5, J6, J7); nothing exists on the page that the comp does not show (a kicker, an extra nav item, a divider, a second row of controls); remove it or name it in a stated decision after the hero passes"
+        ],
+        "summary": "hero 60% (contradicted)",
+        "score": 0.5988,
+        "verdict": "contradicted",
+        "report": ".impeccable\\review\\diff\\hero\\report.json",
+        "sideBySide": ".impeccable\\review\\diff\\hero\\side-by-side.png",
+        "worst": [
+          "next-action-surface missing 23%",
+          "next-action-copy missing 23%",
+          "risk-row missing 27%"
+        ],
+        "worstIds": [
+          "next-action-surface",
+          "next-action-copy",
+          "risk-row"
+        ],
+        "worstCrops": [
+          {
+            "id": "next-action-surface",
+            "verdict": "missing",
+            "score": {
+              "overall": 0.229,
+              "structure": 0.3659,
+              "color": 0.1039,
+              "colorIntersection": 0.0911,
+              "paletteMatch": 0.1108,
+              "detail": 0,
+              "detailRaw": 0.062,
+              "detailAdded": 0.1875,
+              "bands": 0.5
+            },
+            "file": ".impeccable\\review\\diff\\hero\\regions\\next-action-surface.png"
+          },
+          {
+            "id": "next-action-copy",
+            "verdict": "missing",
+            "score": {
+              "overall": 0.2328,
+              "structure": 0.3391,
+              "color": 0.1121,
+              "colorIntersection": 0.0989,
+              "paletteMatch": 0.1193,
+              "detail": 0,
+              "detailRaw": 0.0834,
+              "detailAdded": 0.2083,
+              "bands": 0.3524
+            },
+            "file": ".impeccable\\review\\diff\\hero\\regions\\next-action-copy.png"
+          },
+          {
+            "id": "risk-row",
+            "verdict": "missing",
+            "score": {
+              "overall": 0.2655,
+              "structure": 0.3373,
+              "color": 0.3248,
+              "colorIntersection": 0.0018,
+              "paletteMatch": 0.4987,
+              "detail": 0,
+              "detailRaw": 0.052,
+              "detailAdded": 0.1146,
+              "bands": 0
+            },
+            "file": ".impeccable\\review\\diff\\hero\\regions\\risk-row.png"
+          }
+        ],
+        "advisories": [],
+        "regionVerdicts": {
+          "top-chrome": "missing",
+          "brand-title": "missing",
+          "next-action-surface": "missing",
+          "next-action-copy": "missing",
+          "accept-countdown": "missing",
+          "response-controls": "contradicted",
+          "risk-heading": "contradicted",
+          "risk-row": "missing",
+          "escalation-ladder": "missing",
+          "risk-rows": "missing",
+          "track-heading": "contradicted",
+          "track-rows": "drift",
+          "bottom-navigation": "drift"
+        },
+        "at": "2026-10-22T14:50:48.059Z"
+      },
+      "forced": null,
+      "readingsSeen": {
+        "text next-action-copy: ink is #485898 in the build, #f4f6f8 in the comp; use the comp's colour": 2,
+        "text accept-countdown: ink is #485898 in the build, #f4f7f8 in the comp; use the comp's colour": 2,
+        "text track-heading: ink is #a7a8a8 in the build, #0b0b0c in the comp; use the comp's colour": 1,
+        "chrome next-action-surface: its rule sits 9px into the box in the comp and 164px in the build (+155px), so the strip is taller than the comp's; match the height, not only the position": 2,
+        "control risk-row: its rule sits 15px into the box in the comp and 53px in the build (+38px), so the strip is taller than the comp's; match the height, not only the position": 2,
+        "text track-heading: the face renders 31% lighter than the comp's (ink density 0.40 vs 0.59); raise a weight step or use the ranked face": 1
+      },
+      "records": 2
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {}
+}
