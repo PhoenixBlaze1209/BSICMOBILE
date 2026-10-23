@@ -33,6 +33,7 @@ TaskRepository taskRepository(Ref ref) {
       dueIn: const Duration(minutes: -18),
       slaIn: const Duration(minutes: -8),
       escalationLevel: 1,
+      assignedAgo: const Duration(minutes: 3),
     ),
     _task(
       id: 'launch-copy',
@@ -74,6 +75,26 @@ TaskRepository taskRepository(Ref ref) {
       dueIn: const Duration(days: 4),
       slaIn: const Duration(days: 5),
     ),
+    _task(
+      id: 'design-audit',
+      title: 'Design system audit',
+      team: 'Design',
+      priority: Priority.low,
+      status: TaskStatus.inProgress,
+      now: now,
+      dueIn: const Duration(days: 3),
+      slaIn: const Duration(days: 5),
+    ),
+    _task(
+      id: 'retention-policy',
+      title: 'Customer data retention',
+      team: 'Legal',
+      priority: Priority.low,
+      status: TaskStatus.open,
+      now: now,
+      dueIn: const Duration(days: 6),
+      slaIn: const Duration(days: 7),
+    ),
   ]);
 }
 
@@ -87,6 +108,7 @@ Task _task({
   required Duration dueIn,
   required Duration slaIn,
   int escalationLevel = 0,
+  Duration assignedAgo = const Duration(minutes: 20),
 }) => Task(
   id: id,
   orgId: demoOrgId,
@@ -108,7 +130,7 @@ Task _task({
   slaDeadlineAt: now.add(slaIn),
   createdAt: now.subtract(const Duration(days: 2)),
   updatedAt: now.subtract(const Duration(minutes: 20)),
-  assignedAt: now.subtract(const Duration(minutes: 20)),
+  assignedAt: now.subtract(assignedAgo),
   lastActivityAt: now.subtract(const Duration(minutes: 20)),
   version: 1,
 );

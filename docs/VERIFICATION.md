@@ -1,6 +1,6 @@
 # Verification
 
-Verified on 2026-10-22 in the local Windows workspace. This record distinguishes implemented behavior from contracts and remaining production work.
+Verified on 2026-10-23 in the local Windows workspace. This record distinguishes implemented behavior from contracts and remaining production work.
 
 ## Automated Evidence
 
@@ -10,7 +10,7 @@ Verified on 2026-10-22 in the local Windows workspace. This record distinguishes
 | Generated code | `dart run build_runner build` | Pass |
 | Formatting | `dart format --output=none --set-exit-if-changed lib test integration_test` | Pass |
 | Static analysis | `flutter analyze` | Pass, zero issues with strict casts/inference/raw types |
-| Dart/widget tests | `flutter test --coverage` | Pass, 13 tests; aggregate line coverage 32.05% |
+| Dart/widget tests | `flutter test --coverage` | Pass, 14 tests including compact 200% text scaling; aggregate line coverage remains below target |
 | Functions typecheck | `npm --prefix functions run typecheck` | Pass |
 | Functions tests | `npm --prefix functions test` | Pass, 2 tests |
 | Runtime dependency audit | `npm --prefix functions audit --omit=dev` | Pass, zero known vulnerabilities |
@@ -45,9 +45,10 @@ Verified on 2026-10-22 in the local Windows workspace. This record distinguishes
 ## Visual Evidence
 
 - Compact web render: `.impeccable/review/mobile.png` at 390×844.
-- Expanded web render: `.impeccable/review/desktop.png` at 1440×1100.
+- Expanded web render: `.impeccable/review/desktop-actual.png` at 1440×1100.
+- Reference-normalized responsive-gate capture: `.impeccable/review/desktop.png` at 1440px wide. This exists because Flutter's internal canvas cannot be stitched by browser `fullPage` capture; it is not presented as the real desktop layout.
 - Approved composition reference: `.impeccable/mocks/relay-dashboard-c.png`.
-- The visual comp-diff gate scored 60%, below its 72% fidelity threshold. The implementation preserves the selected hierarchy and semantic color system but does not reproduce the generated comp pixel-for-pixel. This is an open design-review finding, not a pass.
+- The rebuilt compact hero scored 74%, above the 72% mechanical fidelity threshold (up from 60%). The fresh independent finish review nevertheless returned `rebuild`: compact hierarchy is preserved, but the actual desktop surface stretches the mobile board instead of becoming a list-detail workspace. This remains an open design-review finding.
 
 ## Edge-Case Checklist
 
@@ -67,7 +68,7 @@ The delivered repository is a working, analyzed, tested vertical slice and archi
 6. Several secondary management screens provide complete layouts and validated interactions but use illustrative local data rather than connected Firebase mutations. Saved views, recurring scheduling, mention parsing, upload progress, and conflict-resolution sheets are not complete.
 7. Golden tests for every design-system widget, exhaustive screen-state tests, full Firebase integration flows, 1,000-row frame profiling, cold-start measurement, and the 90% coverage gate remain open.
 8. Android and iOS device screenshots/builds were not produced on this host. Android lacks an installed SDK; iOS requires macOS. The web release target and both responsive classes were built and captured.
-9. The comp-fidelity gate remains below threshold as recorded above.
+9. Compact comp fidelity passes mechanically, but the independent reviewer requires a wholesale desktop list-detail rearchitecture and larger operational typography before design sign-off.
 
 No secrets, production Firebase project IDs, or fabricated customer claims were added.
 

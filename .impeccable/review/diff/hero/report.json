@@ -1,7 +1,7 @@
 {
   "tool": "comp-diff",
   "version": 1,
-  "createdAt": "2026-10-22T14:50:47.663Z",
+  "createdAt": "2026-10-23T02:01:25.513Z",
   "label": "hero",
   "comp": ".impeccable\\mocks\\relay-dashboard-c.png",
   "build": ".impeccable\\review\\hero-repro.png",
@@ -9,18 +9,18 @@
   "compSize": "853x1844",
   "buildSize": "853x1844",
   "align": "top",
-  "overall": 0.5988,
-  "verdict": "contradicted",
+  "overall": 0.7392,
+  "verdict": "drift",
   "scores": {
-    "overall": 0.5988,
-    "structure": 0.4567,
-    "color": 0.7576,
-    "colorIntersection": 0.671,
-    "paletteMatch": 0.8041,
-    "detail": 0.474,
-    "detailRaw": 0.5417,
-    "detailAdded": 0.1354,
-    "bands": 0.8737
+    "overall": 0.7392,
+    "structure": 0.5406,
+    "color": 0.9151,
+    "colorIntersection": 0.8547,
+    "paletteMatch": 0.9476,
+    "detail": 0.6849,
+    "detailRaw": 0.7578,
+    "detailAdded": 0.1458,
+    "bands": 1
   },
   "palette": {
     "comp": [
@@ -51,28 +51,28 @@
     ],
     "build": [
       {
-        "hex": "#f5f6f7",
-        "coverage": 0.7821
+        "hex": "#f6f6f8",
+        "coverage": 0.8361
       },
       {
-        "hex": "#485898",
-        "coverage": 0.192
+        "hex": "#1858c8",
+        "coverage": 0.1217
       },
       {
-        "hex": "#1b1b28",
-        "coverage": 0.0105
+        "hex": "#1b1b29",
+        "coverage": 0.0149
       },
       {
-        "hex": "#cbccd5",
-        "coverage": 0.0077
+        "hex": "#cfcfd5",
+        "coverage": 0.0128
       },
       {
-        "hex": "#48484c",
-        "coverage": 0.004
+        "hex": "#b81818",
+        "coverage": 0.0075
       },
       {
-        "hex": "#ba1a1a",
-        "coverage": 0.0038
+        "hex": "#787880",
+        "coverage": 0.007
       }
     ]
   },
@@ -82,20 +82,20 @@
       "x": 0,
       "y": 0,
       "w": 1,
-      "h": 0.1,
+      "h": 0.1052,
       "kind": "chrome",
       "score": {
-        "overall": 0.601,
-        "structure": 0.8383,
-        "color": 0.9606,
-        "colorIntersection": 0.9512,
-        "paletteMatch": 0.9656,
-        "detail": 0.0297,
-        "detailRaw": 0.0454,
-        "detailAdded": 0.0313,
-        "bands": 0.4
+        "overall": 0.6961,
+        "structure": 0.8065,
+        "color": 0.9726,
+        "colorIntersection": 0.9572,
+        "paletteMatch": 0.981,
+        "detail": 0.4186,
+        "detailRaw": 0.4395,
+        "detailAdded": 0.0417,
+        "bands": 0.44
       },
-      "verdict": "missing",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
           "x": 40,
@@ -104,413 +104,418 @@
           "h": 138
         },
         "build": {
-          "x": 774,
-          "y": 52,
-          "w": 53,
-          "h": 57
+          "x": 47,
+          "y": 111,
+          "w": 744,
+          "h": 66
         }
       }
     },
     {
       "id": "brand-title",
-      "x": 0.0352,
-      "y": 0.0553,
-      "w": 0.204,
-      "h": 0.039,
+      "x": 0.0434,
+      "y": 0.0586,
+      "w": 0.1876,
+      "h": 0.0271,
       "kind": "text",
       "score": {
-        "overall": 0.4454,
-        "structure": 0.4669,
-        "color": 0.6878,
-        "colorIntersection": 0.6699,
-        "paletteMatch": 0.6974,
-        "detail": 0,
-        "detailRaw": 0,
-        "detailAdded": 0,
-        "bands": 0.4
+        "overall": 0.5683,
+        "structure": 0.454,
+        "color": 0.7414,
+        "colorIntersection": 0.555,
+        "paletteMatch": 0.8417,
+        "detail": 0.5764,
+        "detailRaw": 0.6024,
+        "detailAdded": 0.0521,
+        "bands": 0.6954
       },
-      "verdict": "missing",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 10,
-          "y": 6,
+          "x": 3,
+          "y": 0,
           "w": 154,
-          "h": 60
+          "h": 50
         },
-        "build": null
+        "build": {
+          "x": 10,
+          "y": 4,
+          "w": 143,
+          "h": 46
+        }
       }
     },
     {
       "id": "next-action-surface",
       "x": 0,
-      "y": 0.1,
+      "y": 0.1052,
       "w": 1,
-      "h": 0.1,
+      "h": 0.1584,
       "kind": "chrome",
       "score": {
-        "overall": 0.229,
-        "structure": 0.3659,
-        "color": 0.1039,
-        "colorIntersection": 0.0911,
-        "paletteMatch": 0.1108,
-        "detail": 0,
-        "detailRaw": 0.062,
-        "detailAdded": 0.1875,
-        "bands": 0.5
-      },
-      "verdict": "missing",
-      "inkBox": {
-        "comp": {
-          "x": 0,
-          "y": 0,
-          "w": 853,
-          "h": 167
-        },
-        "build": {
-          "x": 35,
-          "y": 41,
-          "w": 783,
-          "h": 144
-        }
-      }
-    },
-    {
-      "id": "next-action-copy",
-      "x": 0,
-      "y": 0.1,
-      "w": 0.7,
-      "h": 0.1,
-      "kind": "text",
-      "score": {
-        "overall": 0.2328,
-        "structure": 0.3391,
-        "color": 0.1121,
-        "colorIntersection": 0.0989,
-        "paletteMatch": 0.1193,
-        "detail": 0,
-        "detailRaw": 0.0834,
-        "detailAdded": 0.2083,
-        "bands": 0.3524
-      },
-      "verdict": "missing",
-      "inkBox": {
-        "comp": {
-          "x": 0,
-          "y": 0,
-          "w": 597,
-          "h": 167
-        },
-        "build": {
-          "x": 35,
-          "y": 41,
-          "w": 562,
-          "h": 144
-        }
-      }
-    },
-    {
-      "id": "accept-countdown",
-      "x": 0.7,
-      "y": 0.1,
-      "w": 0.3,
-      "h": 0.1,
-      "kind": "text",
-      "score": {
-        "overall": 0.2758,
-        "structure": 0.5091,
-        "color": 0.0848,
-        "colorIntersection": 0.0736,
-        "paletteMatch": 0.0909,
-        "detail": 0,
-        "detailRaw": 0,
-        "detailAdded": 0.1146,
-        "bands": 0
-      },
-      "verdict": "missing",
-      "inkBox": {
-        "comp": {
-          "x": 0,
-          "y": 0,
-          "w": 256,
-          "h": 133
-        },
-        "build": {
-          "x": 0,
-          "y": 165,
-          "w": 221,
-          "h": 20
-        }
-      }
-    },
-    {
-      "id": "response-controls",
-      "x": 0,
-      "y": 0.2001,
-      "w": 1,
-      "h": 0.0683,
-      "kind": "control",
-      "score": {
-        "overall": 0.3293,
-        "structure": 0.4703,
-        "color": 0.2615,
-        "colorIntersection": 0.1097,
-        "paletteMatch": 0.3433,
-        "detail": 0.1306,
-        "detailRaw": 0.2192,
-        "detailAdded": 0.1771,
-        "bands": 0
+        "overall": 0.5594,
+        "structure": 0.4638,
+        "color": 0.942,
+        "colorIntersection": 0.8586,
+        "paletteMatch": 0.9869,
+        "detail": 0.3299,
+        "detailRaw": 0.4862,
+        "detailAdded": 0.3125,
+        "bands": 0.5273
       },
       "verdict": "contradicted",
       "inkBox": {
         "comp": {
           "x": 0,
-          "y": 14,
+          "y": 37,
           "w": 853,
-          "h": 112
+          "h": 255
         },
         "build": {
           "x": 0,
           "y": 0,
           "w": 853,
-          "h": 126
+          "h": 292
+        }
+      }
+    },
+    {
+      "id": "next-action-copy",
+      "x": 0.0492,
+      "y": 0.1247,
+      "w": 0.6096,
+      "h": 0.0759,
+      "kind": "text",
+      "score": {
+        "overall": 0.5676,
+        "structure": 0.5553,
+        "color": 0.9198,
+        "colorIntersection": 0.8285,
+        "paletteMatch": 0.9689,
+        "detail": 0.0817,
+        "detailRaw": 0.2276,
+        "detailAdded": 0.2917,
+        "bands": 0.4769
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 1,
+          "w": 518,
+          "h": 120
+        },
+        "build": {
+          "x": 3,
+          "y": 5,
+          "w": 447,
+          "h": 135
+        }
+      }
+    },
+    {
+      "id": "accept-countdown",
+      "x": 0.7198,
+      "y": 0.1247,
+      "w": 0.2345,
+      "h": 0.0597,
+      "kind": "text",
+      "score": {
+        "overall": 0.5847,
+        "structure": 0.5528,
+        "color": 0.9132,
+        "colorIntersection": 0.8147,
+        "paletteMatch": 0.9663,
+        "detail": 0.0529,
+        "detailRaw": 0.204,
+        "detailAdded": 0.3021,
+        "bands": 0.72
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 33,
+          "y": 25,
+          "w": 167,
+          "h": 62
+        },
+        "build": {
+          "x": 12,
+          "y": 1,
+          "w": 185,
+          "h": 83
+        }
+      }
+    },
+    {
+      "id": "response-controls",
+      "x": 0.0469,
+      "y": 0.2072,
+      "w": 0.9086,
+      "h": 0.0401,
+      "kind": "control",
+      "score": {
+        "overall": 0.6866,
+        "structure": 0.7289,
+        "color": 0.9263,
+        "colorIntersection": 0.8644,
+        "paletteMatch": 0.9596,
+        "detail": 0.1719,
+        "detailRaw": 0.3177,
+        "detailAdded": 0.2917,
+        "bands": 0.6
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 775,
+          "h": 74
+        },
+        "build": {
+          "x": 4,
+          "y": 0,
+          "w": 765,
+          "h": 74
         }
       }
     },
     {
       "id": "risk-heading",
       "x": 0,
-      "y": 0.2001,
+      "y": 0.2636,
       "w": 1,
-      "h": 0.0683,
+      "h": 0.0466,
       "kind": "text",
       "score": {
-        "overall": 0.3201,
-        "structure": 0.4703,
-        "color": 0.2615,
-        "colorIntersection": 0.1097,
-        "paletteMatch": 0.3433,
-        "detail": 0.1306,
-        "detailRaw": 0.2192,
-        "detailAdded": 0.1771,
-        "bands": 0
+        "overall": 0.718,
+        "structure": 0.6849,
+        "color": 0.921,
+        "colorIntersection": 0.7983,
+        "paletteMatch": 0.9871,
+        "detail": 0.5683,
+        "detailRaw": 0.6829,
+        "detailAdded": 0.2292,
+        "bands": 0.6
       },
-      "verdict": "contradicted",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 0,
-          "y": 14,
-          "w": 853,
-          "h": 112
+          "x": 38,
+          "y": 29,
+          "w": 775,
+          "h": 36
         },
         "build": {
           "x": 0,
           "y": 0,
           "w": 853,
-          "h": 126
+          "h": 71
         }
       }
     },
     {
       "id": "risk-row",
-      "x": 0.1336,
-      "y": 0.3259,
-      "w": 0.3306,
-      "h": 0.039,
+      "x": 0.0317,
+      "y": 0.3102,
+      "w": 0.9297,
+      "h": 0.0651,
       "kind": "control",
       "score": {
-        "overall": 0.2655,
-        "structure": 0.3373,
-        "color": 0.3248,
-        "colorIntersection": 0.0018,
-        "paletteMatch": 0.4987,
-        "detail": 0,
-        "detailRaw": 0.052,
-        "detailAdded": 0.1146,
-        "bands": 0
+        "overall": 0.7496,
+        "structure": 0.7066,
+        "color": 0.9403,
+        "colorIntersection": 0.8975,
+        "paletteMatch": 0.9633,
+        "detail": 0.5123,
+        "detailRaw": 0.6373,
+        "detailAdded": 0.25,
+        "bands": 0.4333
       },
-      "verdict": "missing",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 9,
-          "y": 11,
-          "w": 264,
-          "h": 54
+          "x": 0,
+          "y": 18,
+          "w": 790,
+          "h": 94
         },
         "build": {
           "x": 0,
-          "y": 0,
-          "w": 282,
-          "h": 72
+          "y": 6,
+          "w": 793,
+          "h": 93
         }
       }
     },
     {
       "id": "escalation-ladder",
-      "x": 0.0246,
-      "y": 0.5483,
-      "w": 0.415,
-      "h": 0.0521,
+      "x": 0.0645,
+      "y": 0.3742,
+      "w": 0.8968,
+      "h": 0.1627,
       "kind": "control",
       "score": {
-        "overall": 0.5273,
-        "structure": 0.5119,
-        "color": 0.8401,
-        "colorIntersection": 0.7534,
-        "paletteMatch": 0.8868,
-        "detail": 0.0142,
-        "detailRaw": 0.1392,
-        "detailAdded": 0.25,
-        "bands": 0.29
+        "overall": 0.7112,
+        "structure": 0.6682,
+        "color": 0.9694,
+        "colorIntersection": 0.9426,
+        "paletteMatch": 0.9839,
+        "detail": 0.3562,
+        "detailRaw": 0.5021,
+        "detailAdded": 0.2917,
+        "bands": 0.7067
       },
-      "verdict": "missing",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 6,
-          "y": 12,
-          "w": 340,
-          "h": 84
+          "x": 57,
+          "y": 29,
+          "w": 678,
+          "h": 240
         },
         "build": {
-          "x": 34,
-          "y": 0,
-          "w": 320,
-          "h": 70
+          "x": 19,
+          "y": 19,
+          "w": 730,
+          "h": 236
         }
       }
     },
     {
       "id": "risk-rows",
-      "x": 0.0246,
-      "y": 0.5504,
-      "w": 0.415,
-      "h": 0.0602,
+      "x": 0.0317,
+      "y": 0.5445,
+      "w": 0.9297,
+      "h": 0.141,
       "kind": "control",
       "score": {
-        "overall": 0.5647,
-        "structure": 0.5417,
-        "color": 0.875,
-        "colorIntersection": 0.8038,
-        "paletteMatch": 0.9134,
-        "detail": 0.0736,
-        "detailRaw": 0.1986,
-        "detailAdded": 0.25,
-        "bands": 0.3143
+        "overall": 0.6692,
+        "structure": 0.5609,
+        "color": 0.9456,
+        "colorIntersection": 0.9208,
+        "paletteMatch": 0.9591,
+        "detail": 0.4293,
+        "detailRaw": 0.6272,
+        "detailAdded": 0.3958,
+        "bands": 0.6393
       },
-      "verdict": "missing",
+      "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 6,
-          "y": 8,
-          "w": 340,
-          "h": 98
+          "x": 0,
+          "y": 19,
+          "w": 787,
+          "h": 222
         },
         "build": {
-          "x": 19,
-          "y": 0,
-          "w": 335,
-          "h": 111
+          "x": 0,
+          "y": 14,
+          "w": 793,
+          "h": 217
         }
       }
     },
     {
       "id": "track-heading",
-      "x": 0.0352,
-      "y": 0.7001,
-      "w": 0.2884,
-      "h": 0.0293,
+      "x": 0,
+      "y": 0.6871,
+      "w": 1,
+      "h": 0.051,
       "kind": "text",
       "score": {
-        "overall": 0.4688,
-        "structure": 0.3909,
-        "color": 0.823,
-        "colorIntersection": 0.7817,
-        "paletteMatch": 0.8452,
-        "detail": 0.0826,
-        "detailRaw": 0.2128,
-        "detailAdded": 0.2604,
-        "bands": 0.5528
+        "overall": 0.8108,
+        "structure": 0.8873,
+        "color": 0.9536,
+        "colorIntersection": 0.9193,
+        "paletteMatch": 0.9721,
+        "detail": 0.5916,
+        "detailRaw": 0.6332,
+        "detailAdded": 0.0833,
+        "bands": 0.4
       },
-      "verdict": "contradicted",
+      "verdict": "match",
       "inkBox": {
         "comp": {
-          "x": 9,
-          "y": 11,
-          "w": 229,
+          "x": 39,
+          "y": 35,
+          "w": 773,
           "h": 37
         },
         "build": {
-          "x": 27,
-          "y": 2,
-          "w": 210,
-          "h": 25
+          "x": 48,
+          "y": 41,
+          "w": 748,
+          "h": 40
         }
       }
     },
     {
       "id": "track-rows",
-      "x": 0.0258,
-      "y": 0.7001,
-      "w": 0.4408,
-      "h": 0.2386,
+      "x": 0.0317,
+      "y": 0.7381,
+      "w": 0.9297,
+      "h": 0.2044,
       "kind": "control",
       "score": {
-        "overall": 0.6527,
-        "structure": 0.626,
-        "color": 0.8873,
-        "colorIntersection": 0.8202,
-        "paletteMatch": 0.9234,
-        "detail": 0.3021,
-        "detailRaw": 0.4167,
-        "detailAdded": 0.2292,
-        "bands": 0.8067
+        "overall": 0.6911,
+        "structure": 0.5883,
+        "color": 0.8797,
+        "colorIntersection": 0.8328,
+        "paletteMatch": 0.9049,
+        "detail": 0.5923,
+        "detailRaw": 0.686,
+        "detailAdded": 0.1875,
+        "bands": 0.75
       },
       "verdict": "drift",
       "inkBox": {
         "comp": {
-          "x": 6,
-          "y": 11,
-          "w": 357,
-          "h": 421
+          "x": 1,
+          "y": 18,
+          "w": 792,
+          "h": 344
         },
         "build": {
-          "x": 13,
-          "y": 2,
-          "w": 363,
-          "h": 407
+          "x": 0,
+          "y": 28,
+          "w": 793,
+          "h": 325
         }
       }
     },
     {
       "id": "bottom-navigation",
       "x": 0,
-      "y": 0.9,
+      "y": 0.941,
       "w": 1,
-      "h": 0.1,
+      "h": 0.059,
       "kind": "chrome",
       "score": {
-        "overall": 0.5198,
-        "structure": 0.7615,
-        "color": 0.5232,
-        "colorIntersection": 0.2446,
-        "paletteMatch": 0.6732,
-        "detail": 0.2499,
-        "detailRaw": 0.328,
-        "detailAdded": 0.1563,
-        "bands": 0.4
+        "overall": 0.4778,
+        "structure": 0.8019,
+        "color": 0.4048,
+        "colorIntersection": 0.026,
+        "paletteMatch": 0.6088,
+        "detail": 0.3837,
+        "detailRaw": 0.4462,
+        "detailAdded": 0.125,
+        "bands": 0
       },
-      "verdict": "drift",
+      "verdict": "contradicted",
       "inkBox": {
         "comp": {
-          "x": 28,
-          "y": 0,
-          "w": 805,
-          "h": 167
+          "x": 80,
+          "y": 12,
+          "w": 706,
+          "h": 80
         },
         "build": {
           "x": 72,
-          "y": 7,
+          "y": 19,
           "w": 725,
-          "h": 168
+          "h": 90
         }
       }
     }

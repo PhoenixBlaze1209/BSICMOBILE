@@ -19,4 +19,23 @@ void main() {
     );
     expect(find.text('Accept'), findsOneWidget);
   });
+
+  testWidgets('compact dashboard tolerates 200 percent text scaling', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    tester.platformDispatcher.textScaleFactorTestValue = 2;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+      tester.platformDispatcher.clearTextScaleFactorTestValue();
+    });
+
+    await tester.pumpWidget(const ProviderScope(child: RelayApp()));
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('Restore checkout webhook'), findsWidgets);
+  });
 }

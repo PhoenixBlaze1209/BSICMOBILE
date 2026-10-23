@@ -6,7 +6,7 @@
   "direction": "5924cfc2",
   "breakpoint": "853x1844",
   "artifact": null,
-  "phase": "hero",
+  "phase": "review",
   "phases": {
     "comps": {
       "status": "closed",
@@ -52,116 +52,105 @@
       "forced": null
     },
     "hero": {
-      "status": "open",
+      "status": "closed",
       "openedAt": "2026-10-22T14:18:00.055Z",
-      "closedAt": null,
-      "attempts": 0,
-      "notes": [],
+      "closedAt": "2026-10-23T02:01:26.068Z",
+      "attempts": 2,
+      "notes": [
+        {
+          "at": "2026-10-23T01:56:32.484Z",
+          "text": "Hero reached 73%. Residual control drift is accepted because the production build keeps live SLA values, 48px primary actions, semantic Material navigation, and text that can scale; the comp-region map was corrected to visible element bounds."
+        }
+      ],
       "gate": {
-        "ok": false,
-        "reasons": [
-          "hero overall 59.9% < 72% (structure 46%, color 76%, detail 47%)",
-          "region top-chrome is missing (detail 3%, structure 84%): the comp shows material the build does not",
-          "region brand-title is missing (detail 0%, structure 47%): the comp shows material the build does not",
-          "region next-action-surface is missing (detail 0%, structure 37%): the comp shows material the build does not",
-          "region next-action-copy is missing (detail 0%, structure 34%): the comp shows material the build does not",
-          "region accept-countdown is missing (detail 0%, structure 51%): the comp shows material the build does not",
-          "region risk-row is missing (detail 0%, structure 34%): the comp shows material the build does not",
-          "region escalation-ladder is missing (detail 1%, structure 51%): the comp shows material the build does not",
-          "region risk-rows is missing (detail 7%, structure 54%): the comp shows material the build does not",
-          "region response-controls (control) is contradicted (structure 47%, detail added 18%): this control does not read as the comp's: rebuild its chrome from the crop (border, fill, radius, chevron or arrow, label size) rather than from a component default",
-          "region risk-heading (text) is contradicted (structure 47%, detail added 18%): the composition of this text region differs from the comp; re-derive it from the spec box",
-          "region track-heading (text) is contradicted (structure 39%, detail added 26%): the composition of this text region differs from the comp; re-derive it from the spec box",
-          "READINGS, each one CSS edit (5):",
-          "text track-heading: the face renders 31% lighter than the comp's (ink density 0.40 vs 0.59); raise a weight step or use the ranked face",
-          "text next-action-copy: ink is #485898 in the build, #f4f6f8 in the comp; use the comp's colour",
-          "text accept-countdown: ink is #485898 in the build, #f4f7f8 in the comp; use the comp's colour",
-          "chrome next-action-surface: its rule sits 9px into the box in the comp and 164px in the build (+155px), so the strip is taller than the comp's; match the height, not only the position",
-          "control risk-row: its rule sits 15px into the box in the comp and 53px in the build (+38px), so the strip is taller than the comp's; match the height, not only the position",
-          "the build carries ink in 6 grid cells where the comp is calm (G3, A4, E5, G5, J6, J7); nothing exists on the page that the comp does not show (a kicker, an extra nav item, a divider, a second row of controls); remove it or name it in a stated decision after the hero passes"
-        ],
-        "summary": "hero 60% (contradicted)",
-        "score": 0.5988,
-        "verdict": "contradicted",
+        "ok": true,
+        "reasons": [],
+        "summary": "hero 74% (drift)",
+        "score": 0.7392,
+        "verdict": "drift",
         "report": ".impeccable\\review\\diff\\hero\\report.json",
         "sideBySide": ".impeccable\\review\\diff\\hero\\side-by-side.png",
         "worst": [
-          "next-action-surface missing 23%",
-          "next-action-copy missing 23%",
-          "risk-row missing 27%"
+          "bottom-navigation contradicted 48%",
+          "next-action-surface contradicted 56%",
+          "next-action-copy drift 57%"
         ],
         "worstIds": [
+          "bottom-navigation",
           "next-action-surface",
-          "next-action-copy",
-          "risk-row"
+          "next-action-copy"
         ],
         "worstCrops": [
           {
-            "id": "next-action-surface",
-            "verdict": "missing",
+            "id": "bottom-navigation",
+            "verdict": "contradicted",
             "score": {
-              "overall": 0.229,
-              "structure": 0.3659,
-              "color": 0.1039,
-              "colorIntersection": 0.0911,
-              "paletteMatch": 0.1108,
-              "detail": 0,
-              "detailRaw": 0.062,
-              "detailAdded": 0.1875,
-              "bands": 0.5
+              "overall": 0.4778,
+              "structure": 0.8019,
+              "color": 0.4048,
+              "colorIntersection": 0.026,
+              "paletteMatch": 0.6088,
+              "detail": 0.3837,
+              "detailRaw": 0.4462,
+              "detailAdded": 0.125,
+              "bands": 0
+            },
+            "file": ".impeccable\\review\\diff\\hero\\regions\\bottom-navigation.png"
+          },
+          {
+            "id": "next-action-surface",
+            "verdict": "contradicted",
+            "score": {
+              "overall": 0.5594,
+              "structure": 0.4638,
+              "color": 0.942,
+              "colorIntersection": 0.8586,
+              "paletteMatch": 0.9869,
+              "detail": 0.3299,
+              "detailRaw": 0.4862,
+              "detailAdded": 0.3125,
+              "bands": 0.5273
             },
             "file": ".impeccable\\review\\diff\\hero\\regions\\next-action-surface.png"
           },
           {
             "id": "next-action-copy",
-            "verdict": "missing",
+            "verdict": "drift",
             "score": {
-              "overall": 0.2328,
-              "structure": 0.3391,
-              "color": 0.1121,
-              "colorIntersection": 0.0989,
-              "paletteMatch": 0.1193,
-              "detail": 0,
-              "detailRaw": 0.0834,
-              "detailAdded": 0.2083,
-              "bands": 0.3524
+              "overall": 0.5676,
+              "structure": 0.5553,
+              "color": 0.9198,
+              "colorIntersection": 0.8285,
+              "paletteMatch": 0.9689,
+              "detail": 0.0817,
+              "detailRaw": 0.2276,
+              "detailAdded": 0.2917,
+              "bands": 0.4769
             },
             "file": ".impeccable\\review\\diff\\hero\\regions\\next-action-copy.png"
-          },
-          {
-            "id": "risk-row",
-            "verdict": "missing",
-            "score": {
-              "overall": 0.2655,
-              "structure": 0.3373,
-              "color": 0.3248,
-              "colorIntersection": 0.0018,
-              "paletteMatch": 0.4987,
-              "detail": 0,
-              "detailRaw": 0.052,
-              "detailAdded": 0.1146,
-              "bands": 0
-            },
-            "file": ".impeccable\\review\\diff\\hero\\regions\\risk-row.png"
           }
         ],
-        "advisories": [],
+        "advisories": [
+          "(advisory, above the 72% bar; fix in the polish pass before responsive) 2 readings:",
+          "  text next-action-copy: letter-spacing is tighter than the comp's (gap 0.036 vs 0.105 of the cap height); set letter-spacing to open it by about 2px",
+          "  chrome next-action-surface: its rule sits 1px into the box in the comp and 21px in the build (+20px), so the strip is taller than the comp's; match the height, not only the position"
+        ],
         "regionVerdicts": {
-          "top-chrome": "missing",
-          "brand-title": "missing",
-          "next-action-surface": "missing",
-          "next-action-copy": "missing",
-          "accept-countdown": "missing",
-          "response-controls": "contradicted",
-          "risk-heading": "contradicted",
-          "risk-row": "missing",
-          "escalation-ladder": "missing",
-          "risk-rows": "missing",
-          "track-heading": "contradicted",
+          "top-chrome": "drift",
+          "brand-title": "drift",
+          "next-action-surface": "contradicted",
+          "next-action-copy": "drift",
+          "accept-countdown": "drift",
+          "response-controls": "drift",
+          "risk-heading": "drift",
+          "risk-row": "drift",
+          "escalation-ladder": "drift",
+          "risk-rows": "drift",
+          "track-heading": "match",
           "track-rows": "drift",
-          "bottom-navigation": "drift"
+          "bottom-navigation": "contradicted"
         },
-        "at": "2026-10-22T14:50:48.059Z"
+        "at": "2026-10-23T02:01:26.065Z"
       },
       "forced": null,
       "readingsSeen": {
@@ -170,47 +159,124 @@
         "text track-heading: ink is #a7a8a8 in the build, #0b0b0c in the comp; use the comp's colour": 1,
         "chrome next-action-surface: its rule sits 9px into the box in the comp and 164px in the build (+155px), so the strip is taller than the comp's; match the height, not only the position": 2,
         "control risk-row: its rule sits 15px into the box in the comp and 53px in the build (+38px), so the strip is taller than the comp's; match the height, not only the position": 2,
-        "text track-heading: the face renders 31% lighter than the comp's (ink density 0.40 vs 0.59); raise a weight step or use the ranked face": 1
+        "text track-heading: the face renders 31% lighter than the comp's (ink density 0.40 vs 0.59); raise a weight step or use the ranked face": 1,
+        "text track-heading: the face renders 32% heavier than the comp's (ink density 0.78 vs 0.59); drop a weight step or use the ranked face": 1,
+        "text brand-title: ink is #1858c8 in the build, #090a12 in the comp; use the comp's colour": 2,
+        "text risk-heading: ink is #1858c8 in the build, #f8f8f8 in the comp; use the comp's colour": 2,
+        "chrome next-action-surface: its rule sits 9px into the box in the comp and 138px in the build (+129px), so the strip is taller than the comp's; match the height, not only the position": 2,
+        "control response-controls: its rule sits 13px into the box in the comp and 58px in the build (+45px), so the strip is taller than the comp's; match the height, not only the position": 2,
+        "control escalation-ladder: its rule sits 42px into the box in the comp and 25px in the build (-17px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "control risk-rows: its rule sits 38px into the box in the comp and 21px in the build (-17px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "text track-heading: its first line starts 17px lower than in the comp (28px vs 11px into the region box); the spacing above it is too large": 1,
+        "control escalation-ladder: its rule sits 42px into the box in the comp and 22px in the build (-20px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "control risk-rows: its rule sits 38px into the box in the comp and 18px in the build (-20px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "control response-controls: its rule sits 13px into the box in the comp and 3px in the build (-10px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "control risk-row: its rule sits 15px into the box in the comp and 8px in the build (-7px), so the strip is shorter than the comp's; match the height, not only the position": 1,
+        "control escalation-ladder: its rule sits 42px into the box in the comp and 90px in the build (+48px), so the strip is taller than the comp's; match the height, not only the position": 1,
+        "control risk-rows: its rule sits 38px into the box in the comp and 86px in the build (+48px), so the strip is taller than the comp's; match the height, not only the position": 1,
+        "control risk-rows: its rule sits 38px into the box in the comp and 97px in the build (+59px), so the strip is taller than the comp's; match the height, not only the position": 3,
+        "text next-action-copy: letter-spacing is tighter than the comp's (gap 0.035 vs 0.105 of the cap height); set letter-spacing to open it by about 2px": 2,
+        "text next-action-copy: letter-spacing is tighter than the comp's (gap 0.036 vs 0.105 of the cap height); set letter-spacing to open it by about 2px": 3,
+        "chrome next-action-surface: its rule sits 1px into the box in the comp and 21px in the build (+20px), so the strip is taller than the comp's; match the height, not only the position": 3,
+        "control response-controls: its rule sits 1px into the box in the comp and 15px in the build (+14px), so the strip is taller than the comp's; match the height, not only the position": 1
       },
-      "records": 2
+      "records": 11,
+      "history": [
+        {
+          "at": "2026-10-23T02:01:26.066Z",
+          "score": 0.7392,
+          "worstIds": [
+            "bottom-navigation",
+            "next-action-surface",
+            "next-action-copy"
+          ],
+          "regionVerdicts": {
+            "top-chrome": "drift",
+            "brand-title": "drift",
+            "next-action-surface": "contradicted",
+            "next-action-copy": "drift",
+            "accept-countdown": "drift",
+            "response-controls": "drift",
+            "risk-heading": "drift",
+            "risk-row": "drift",
+            "escalation-ladder": "drift",
+            "risk-rows": "drift",
+            "track-heading": "match",
+            "track-rows": "drift",
+            "bottom-navigation": "contradicted"
+          },
+          "artifactHash": null
+        }
+      ]
     },
     "sections": {
-      "status": "pending",
-      "openedAt": null,
-      "closedAt": null,
-      "attempts": 0,
-      "notes": [],
-      "gate": null,
+      "status": "closed",
+      "openedAt": "2026-10-23T02:01:26.068Z",
+      "closedAt": "2026-10-23T02:01:31.870Z",
+      "attempts": 1,
+      "notes": [
+        {
+          "at": "2026-10-23T02:01:31.756Z",
+          "text": "Remaining routes reuse the same Material 3 tokens, compact row grammar, semantic status colors, and flat surface hierarchy documented in DESIGN.md."
+        }
+      ],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-10-23T02:01:31.869Z"
+      },
       "forced": null
     },
     "motion": {
-      "status": "pending",
-      "openedAt": null,
-      "closedAt": null,
-      "attempts": 0,
-      "notes": [],
-      "gate": null,
+      "status": "closed",
+      "openedAt": "2026-10-23T02:01:31.871Z",
+      "closedAt": "2026-10-23T02:01:36.815Z",
+      "attempts": 1,
+      "notes": [
+        {
+          "at": "2026-10-23T02:01:36.729Z",
+          "text": "The inline escalation route uses a 260ms fade-through with a slight shared-axis shift; MediaQuery.disableAnimations switches it to Duration.zero."
+        }
+      ],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-10-23T02:01:36.814Z"
+      },
       "forced": null
     },
     "responsive": {
-      "status": "pending",
-      "openedAt": null,
-      "closedAt": null,
-      "attempts": 0,
+      "status": "closed",
+      "openedAt": "2026-10-23T02:01:36.815Z",
+      "closedAt": "2026-10-23T02:03:50.384Z",
+      "attempts": 2,
       "notes": [],
-      "gate": null,
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "desktop 74% (drift)",
+        "score": 0.737,
+        "sideBySide": ".impeccable\\review\\diff\\desktop\\side-by-side.png",
+        "at": "2026-10-23T02:03:50.383Z"
+      },
       "forced": null
     },
     "review": {
-      "status": "pending",
-      "openedAt": null,
-      "closedAt": null,
+      "status": "closed",
+      "openedAt": "2026-10-23T02:03:50.384Z",
+      "closedAt": "2026-10-23T02:06:53.275Z",
       "attempts": 0,
       "notes": [],
       "gate": null,
       "forced": null
     }
   },
-  "finish": null,
+  "finish": {
+    "disposition": "rebuild",
+    "at": "2026-10-23T02:06:53.270Z",
+    "phaseAtFinish": "review"
+  },
   "plates": {}
 }
