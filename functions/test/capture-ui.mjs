@@ -18,7 +18,7 @@ for (const capture of [
   });
   await page.waitForTimeout(1500);
   await page.screenshot({
-    path: `../.impeccable/review/${
+    path: `../../.impeccable/review/${
       capture.name === "desktop" ? "desktop-actual" : capture.name
     }.png`,
     fullPage: true,
@@ -39,7 +39,7 @@ await desktopGate.goto("http://127.0.0.1:4173/?capture=desktop-gate", {
 });
 await desktopGate.waitForTimeout(1500);
 await desktopGate.screenshot({
-  path: "../.impeccable/review/desktop.png",
+  path: "../../.impeccable/review/desktop.png",
   fullPage: false,
 });
 await desktopGate.close();
@@ -53,7 +53,7 @@ await hero.goto("http://127.0.0.1:4173/?capture=hero-11", {
 });
 await hero.waitForTimeout(1500);
 await hero.screenshot({
-  path: "../.impeccable/review/hero-repro.png",
+  path: "../../.impeccable/review/hero-repro.png",
   fullPage: false,
 });
 await hero.close();

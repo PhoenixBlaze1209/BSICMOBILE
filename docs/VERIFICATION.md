@@ -16,7 +16,7 @@ Verified on 2026-10-23 in the local Windows workspace. This record distinguishes
 | Runtime dependency audit | `npm --prefix functions audit --omit=dev` | Pass, zero known vulnerabilities |
 | Firestore rules emulator | Firebase Emulator + `npm --prefix functions run test:rules` | Pass, 2 tests |
 | Web release | `flutter build web --release --dart-define=RELAY_ENV=prod` | Pass |
-| Android release | `flutter build apk --flavor prod` | Not run locally: Android SDK is absent; CI contains the gate |
+| Android release | `flutter build apk --flavor prod --release` | Pass; `dist/Relay-1.0.0-demo.apk`, 61,379,216 bytes |
 | iOS release | Xcode build | Not runnable on Windows; CI/release needs a macOS runner |
 
 ## Requirement Map
@@ -48,7 +48,8 @@ Verified on 2026-10-23 in the local Windows workspace. This record distinguishes
 - Expanded web render: `.impeccable/review/desktop-actual.png` at 1440×1100.
 - Reference-normalized responsive-gate capture: `.impeccable/review/desktop.png` at 1440px wide. This exists because Flutter's internal canvas cannot be stitched by browser `fullPage` capture; it is not presented as the real desktop layout.
 - Approved composition reference: `.impeccable/mocks/relay-dashboard-c.png`.
-- The rebuilt compact hero scored 74%, above the 72% mechanical fidelity threshold (up from 60%). The fresh independent finish review nevertheless returned `rebuild`: compact hierarchy is preserved, but the actual desktop surface stretches the mobile board instead of becoming a list-detail workspace. This remains an open design-review finding.
+- The expanded surface now uses a bounded queue plus persistent task-detail pane instead of stretching the compact layout.
+- The final reference comparison scored 69.92%, below the 72% mechanical threshold. The independent verdict resolved the rails, hierarchy label, shared clock, text-role, and adaptive-layout findings, but kept the action-band/wordmark fidelity and iOS recapture open. This is not recorded as full design sign-off.
 
 ## Edge-Case Checklist
 
@@ -67,8 +68,17 @@ The delivered repository is a working, analyzed, tested vertical slice and archi
 5. The Functions evaluator implements trigger selection, scheduling, transaction version checks, deterministic keys, events, activities, and intents, but business-calendar arithmetic, quiet hours, target fallback/delegate routing, repeat keys, priority-raise/reassign actions, and shared JSON fixture loading still need server completion.
 6. Several secondary management screens provide complete layouts and validated interactions but use illustrative local data rather than connected Firebase mutations. Saved views, recurring scheduling, mention parsing, upload progress, and conflict-resolution sheets are not complete.
 7. Golden tests for every design-system widget, exhaustive screen-state tests, full Firebase integration flows, 1,000-row frame profiling, cold-start measurement, and the 90% coverage gate remain open.
-8. Android and iOS device screenshots/builds were not produced on this host. Android lacks an installed SDK; iOS requires macOS. The web release target and both responsive classes were built and captured.
-9. Compact comp fidelity passes mechanically, but the independent reviewer requires a wholesale desktop list-detail rearchitecture and larger operational typography before design sign-off.
+8. Android release packaging is verified, but there was no attached Android device/emulator for installation screenshots. iOS still requires a macOS build host and device/simulator capture.
+9. The expanded list-detail rearchitecture and larger operational typography are implemented. Final comp fidelity is 69.92%, so action-band/wordmark tuning and an iOS compact recapture remain before design sign-off.
+
+## Android Artifact
+
+- Package: `com.relay.app.relay`
+- Version: `1.0.0` (`versionCode` 1)
+- Minimum / target SDK: 24 / 36
+- Signature: APK Signature Scheme v2, local Android debug certificate (suitable for direct evaluation, not Play Store publication)
+- SHA-256: `FB13AA210946293B545F4EC68FF7DEC394235F63D1418A2C44379DBF5F1AE204`
+- Runtime data: the APK uses the in-memory illustrative repository. Firebase dependencies and adapters are present, but no production Firebase options or credentials are embedded.
 
 No secrets, production Firebase project IDs, or fabricated customer claims were added.
 

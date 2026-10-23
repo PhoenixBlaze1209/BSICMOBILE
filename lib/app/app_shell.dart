@@ -92,13 +92,28 @@ final class AppShell extends StatelessWidget {
             ),
           );
         }
+        final ios = Theme.of(context).platform == TargetPlatform.iOS;
         return Scaffold(
           body: SafeArea(child: child),
-          bottomNavigationBar: NavigationBar(
-            selectedIndex: index,
-            onDestinationSelected: (value) => _go(context, value),
-            destinations: destinations,
-          ),
+          bottomNavigationBar: ios
+              ? BottomNavigationBar(
+                  currentIndex: index,
+                  onTap: (value) => _go(context, value),
+                  type: BottomNavigationBarType.fixed,
+                  items: [
+                    for (final destination in destinations)
+                      BottomNavigationBarItem(
+                        icon: destination.icon,
+                        activeIcon: destination.selectedIcon,
+                        label: destination.label,
+                      ),
+                  ],
+                )
+              : NavigationBar(
+                  selectedIndex: index,
+                  onDestinationSelected: (value) => _go(context, value),
+                  destinations: destinations,
+                ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => context.push('/tasks/new'),
             tooltip: 'Create task',

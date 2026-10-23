@@ -24,7 +24,31 @@ abstract final class RelayTheme {
       colorScheme: scheme,
       visualDensity: VisualDensity.standard,
     );
+    final textTheme = base.textTheme.copyWith(
+      displayLarge: base.textTheme.displayLarge?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      displayMedium: base.textTheme.displayMedium?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      displaySmall: base.textTheme.displaySmall?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      headlineLarge: base.textTheme.headlineLarge?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      headlineMedium: base.textTheme.headlineMedium?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      headlineSmall: base.textTheme.headlineSmall?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+      titleLarge: base.textTheme.titleLarge?.copyWith(
+        fontFamily: 'BricolageGrotesque',
+      ),
+    );
     return base.copyWith(
+      textTheme: textTheme,
       scaffoldBackgroundColor: scheme.surface,
       dividerTheme: DividerThemeData(color: scheme.outlineVariant, space: 1),
       cardTheme: CardThemeData(

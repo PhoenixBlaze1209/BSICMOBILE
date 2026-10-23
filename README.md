@@ -20,6 +20,8 @@ flutter run -d chrome --dart-define=RELAY_ENV=dev
 
 The default development build uses an in-memory repository with clearly labelled illustrative data. Configure a Firebase project outside the repository and replace the repository provider at bootstrap for connected environments. No Firebase options or secrets are committed.
 
+The locally packaged evaluation APK is `dist/Relay-1.0.0-demo.apk`. It is v2-signed with the local Android debug certificate for direct installation; a store release requires a private production signing key and real Firebase configuration.
+
 ## Environments
 
 Android product flavors are `dev`, `staging`, and `prod`. The Dart environment is selected with `--dart-define=RELAY_ENV=<value>`.

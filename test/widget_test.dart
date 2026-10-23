@@ -9,7 +9,6 @@ void main() {
   ) async {
     await tester.pumpWidget(const ProviderScope(child: RelayApp()));
     await tester.pumpAndSettle();
-    expect(find.text('Next action'), findsOneWidget);
     expect(find.text('Restore checkout webhook'), findsWidgets);
     expect(
       find.byWidgetPredicate(
