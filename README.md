@@ -1,50 +1,33 @@
 # Relay
 
-Relay is an adaptive Flutter application for task delegation, priority-aware SLAs, and automatic escalation. The domain and application layers are pure Dart; Firebase and Drift are replaceable adapters.
+Relay is a private, single-user reminder app for Android and iOS. It stores tasks on the device, increases reminder frequency as deadlines approach, respects quiet hours, and can require photo proof before a task is completed.
 
-## Toolchain
+## What works
 
-- Flutter 3.47.7 / Dart 3.13.5
-- Node 22 for Cloud Functions
-- Firebase Emulator Suite for Auth, Firestore, Functions, and rules tests
+- Today, Upcoming, All, and Done collections with search and durable Drift storage.
+- Create, edit, start, snooze, complete, cancel, delete, and repeat reminders.
+- Five urgency levels, per-task priority, bounded snoozing, quiet hours, boot-safe rescheduling, and notification actions.
+- Optional camera proof with local image processing and on-device ML Kit checks.
+- Optional Gemini verification with a user-provided key stored in the platform secure store.
+- Proof history, duplicate-image detection, strict completion, and an audited manual override.
+- Local JSON export/import, photo retention controls, theme settings, and reminder diagnostics.
 
-Install Flutter at the version in `.fvmrc`, then run:
+Relay has no account, shared workspace, or cloud database. A proof image is sent to Gemini only when the user explicitly enables cloud verification and supplies a key.
+
+## Build and test
 
 ```powershell
 flutter pub get
-dart run build_runner build
+dart run build_runner build --delete-conflicting-outputs
 flutter analyze
-flutter test --coverage
-flutter run -d chrome --dart-define=RELAY_ENV=dev
+flutter test
+flutter build apk --release
 ```
 
-The default development build uses an in-memory repository with clearly labelled illustrative data. Configure a Firebase project outside the repository and replace the repository provider at bootstrap for connected environments. No Firebase options or secrets are committed.
+The CI workflow runs analysis, tests, and an Android release build. Local release APKs use the Android debug certificate for direct installation; store distribution requires a private production signing configuration.
 
-The locally packaged evaluation APK is `dist/Relay-1.0.0-demo.apk`. It is v2-signed with the local Android debug certificate for direct installation; a store release requires a private production signing key and real Firebase configuration.
+## Install
 
-## Environments
+The packaged APK is copied to `dist/Relay-personal-reminders.apk` after verification. Android may ask you to allow installation from the app that opens the file.
 
-Android product flavors are `dev`, `staging`, and `prod`. The Dart environment is selected with `--dart-define=RELAY_ENV=<value>`.
-
-```powershell
-flutter build apk --flavor prod --dart-define=RELAY_ENV=prod
-flutter build web --dart-define=RELAY_ENV=prod
-```
-
-## Functions
-
-```powershell
-cd functions
-npm ci
-npm run typecheck
-npm test
-```
-
-Use a demo project for emulator work:
-
-```powershell
-npx firebase-tools emulators:exec --project demo-relay --only firestore,auth,functions "npm --prefix functions test"
-```
-
-Architecture and operational contracts are in `docs/`. `docs/VERIFICATION.md` records the current verification evidence and known environment limitations.
-
+See `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/TEST_PLAN.md`, and `docs/VERIFICATION.md` for implementation details.
